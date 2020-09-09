@@ -17,7 +17,10 @@ def encryptButton():
     elif(selected == "Extended Vigenere"):
         ciphertext = ExtendedVigenere.encrypt(message, key)
     elif(selected == "Affine"):
-        ciphertext = Affine.encrypt(message, (int(s) for s in key.split()))
+        k = []
+        for s in key.split():
+            k.append(int(s))
+        ciphertext = Affine.encrypt(message, k)
     elif(selected == "Playfair"):
         ciphertext = Playfair.encrypt(message, Playfair.buildtable(key.upper()))
     elif(selected == "Super Encryption (Vigenere + Transposition)"):
@@ -50,7 +53,10 @@ def encryptButtonFile():
     elif(selected == "Extended Vigenere"):
         ciphertext = ExtendedVigenere.encrypt(message, key)
     elif(selected == "Affine"):
-        ciphertext = Affine.encrypt(message, (int(s) for s in key.split()))
+        k = []
+        for s in key.split():
+            k.append(int(s))
+        ciphertext = Affine.encrypt(message, k)
     elif(selected == "Playfair"):
         ciphertext = Playfair.encrypt(message, Playfair.buildtable(key.upper()))
     elif(selected == "Super Encryption (Vigenere + Transposition)"):
@@ -85,7 +91,10 @@ def decryptButton():
     elif(selected == "Extended Vigenere"):
         plaintext = ExtendedVigenere.decrypt(message, key)
     elif(selected == "Affine"):
-        plaintext = Affine.decrypt(message, (int(s) for s in key.split()))
+        k = []
+        for s in key.split():
+            k.append(int(s))
+        plaintext = Affine.decrypt(message, k)
     elif(selected == "Playfair"):
         plaintext = Playfair.decrypt(message, Playfair.buildtable(key.upper()))
     elif(selected == "Super Encryption (Vigenere + Transposition)"):
@@ -118,7 +127,10 @@ def decryptButtonFile():
     elif(selected == "Extended Vigenere"):
         plaintext = ExtendedVigenere.decrypt(message, key)
     elif(selected == "Affine"):
-        plaintext = Affine.decrypt(message, (int(s) for s in key.split()))
+        k = []
+        for s in key.split():
+            k.append(int(s))
+        plaintext = Affine.decrypt(message, k)
     elif(selected == "Playfair"):
         plaintext = Playfair.decrypt(message, Playfair.buildtable(key.upper()))
     elif(selected == "Super Encryption (Vigenere + Transposition)"):
